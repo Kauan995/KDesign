@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="KDesigns: criação de logos, posts, stories, cardápios, anúncios, panfletos, banners e capas para redes sociais.">
+  <title>KDesigns | Design Gráfico</title>
+  <style>
+    :root { color-scheme: dark; --blue:#27b8ff; --cyan:#79dcff; --ink:#050b16; --muted:#b2c5dc; }
+    * { box-sizing:border-box; margin:0; }
+    html { scroll-behavior:smooth; }
+    body { min-height:100vh; color:#f5faff; font-family:Arial,Helvetica,sans-serif; line-height:1.6; background:radial-gradient(ellipse at 50% -10%,#0a3563 0,transparent 43%),radial-gradient(circle at 12% 34%,rgba(0,130,255,.13),transparent 29%),radial-gradient(circle at 88% 65%,rgba(0,88,255,.12),transparent 30%),#030711; }
+    a { color:inherit; }
+    header { position:sticky; top:0; z-index:5; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:16px max(6%,calc((100% - 1120px)/2)); background:rgba(3,8,18,.88); border-bottom:1px solid rgba(39,184,255,.25); backdrop-filter:blur(14px); }
+    .brand { color:var(--cyan); font-size:1.45rem; font-weight:900; letter-spacing:.04em; text-decoration:none; text-shadow:0 0 14px rgba(39,184,255,.68); }
+    nav { display:flex; flex-wrap:wrap; gap:22px; }
+    nav a { color:#d7e7f7; text-decoration:none; font-size:.94rem; transition:color .2s,text-shadow .2s; }
+    nav a:hover,nav a:focus-visible { color:var(--cyan); text-shadow:0 0 12px var(--blue); }
+    main { overflow:hidden; }
+    .hero { max-width:1000px; margin:auto; padding:104px 24px 86px; text-align:center; }
+    .eyebrow { display:inline-block; margin-bottom:16px; padding:6px 14px; border:1px solid rgba(39,184,255,.35); border-radius:999px; color:var(--cyan); background:rgba(0,128,255,.08); font-size:.78rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; }
+    h1 { font-size:clamp(2.65rem,7vw,5rem); line-height:1.04; letter-spacing:-.045em; }
+    h1 span,.accent { color:var(--cyan); text-shadow:0 0 22px rgba(0,153,255,.56); }
+    .hero p { max-width:660px; margin:20px auto 0; color:var(--muted); font-size:clamp(1rem,2vw,1.16rem); }
+    .button { display:inline-flex; align-items:center; justify-content:center; margin-top:28px; padding:13px 22px; border:1px solid rgba(121,220,255,.8); border-radius:10px; background:linear-gradient(135deg,#078bd2,#0754bb); box-shadow:0 0 25px rgba(0,143,255,.27),inset 0 1px rgba(255,255,255,.15); color:white; font-weight:700; text-decoration:none; transition:transform .2s,box-shadow .2s; }
+    .button:hover,.button:focus-visible { transform:translateY(-2px); box-shadow:0 0 34px rgba(0,170,255,.48); }
+    section { max-width:1120px; margin:auto; padding:70px 24px; scroll-margin-top:85px; }
+    .section-heading { margin:0 auto 34px; text-align:center; }
+    .section-heading h2 { font-size:clamp(1.8rem,4vw,2.6rem); line-height:1.15; }
+    .section-heading p { margin-top:10px; color:var(--muted); }
+    .services { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; }
+    .card { padding:22px; border:1px solid rgba(78,157,218,.22); border-radius:16px; background:linear-gradient(145deg,rgba(12,28,50,.86),rgba(5,12,24,.9)); box-shadow:0 8px 32px rgba(0,0,0,.18); }
+    .card h3 { margin-bottom:9px; color:#eaf7ff; font-size:1.1rem; }
+    .card p { color:var(--muted); font-size:.92rem; }
+    .price-list { display:grid; gap:7px; margin-top:15px; padding-top:13px; border-top:1px solid rgba(93,170,223,.17); color:#d9edff; font-size:.92rem; }
+    .price-list strong { color:var(--cyan); }
+    .packages { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; }
+    .package { position:relative; padding:24px 20px; border:1px solid rgba(39,184,255,.35); border-radius:16px; background:linear-gradient(155deg,rgba(7,47,83,.76),rgba(5,12,24,.92) 67%); box-shadow:0 0 25px rgba(0,117,220,.10); text-align:center; }
+    .package h3 { min-height:3.3em; font-size:1.05rem; line-height:1.45; }
+    .package .price { margin-top:8px; color:var(--cyan); font-size:1.8rem; font-weight:800; text-shadow:0 0 16px rgba(39,184,255,.42); }
+    .package p { margin-top:4px; color:var(--muted); font-size:.88rem; }
+    .contact { max-width:760px; padding:35px; border:1px solid rgba(39,184,255,.28); border-radius:18px; background:rgba(6,18,34,.78); text-align:center; box-shadow:0 0 35px rgba(0,116,226,.1); }
+    .contact p { margin-top:12px; color:var(--muted); }
+    footer { padding:24px; border-top:1px solid rgba(39,184,255,.17); color:#91a9c2; text-align:center; font-size:.88rem; }
+    @media (max-width:900px) { .services,.packages { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:600px) { header { align-items:flex-start; flex-direction:column; padding:14px 20px; } nav { gap:13px; } nav a { font-size:.86rem; } .hero { padding:76px 20px 60px; } section { padding:54px 20px; } .services,.packages { grid-template-columns:1fr; } .contact { padding:26px 20px; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none!important; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="#inicio" aria-label="KDesigns, início">KDESIGNS</a>
+    <nav aria-label="Navegação principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#pacotes">Pacotes</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <span class="eyebrow">Design gráfico</span>
+      <h1>Ideias que brilham.<br><span>Design que marca.</span></h1>
+      <p>Criação de artes e identidades visuais para destacar sua marca nas redes e em materiais impressos.</p>
+      <a class="button" href="#servicos">Conheça os serviços</a>
+    </section>
+    <section id="servicos">
+      <div class="section-heading">
+        <h2>Serviços</h2>
+        <p>Escolha o formato ideal para sua ideia.</p>
+      </div>
+      <div class="services">
+        <article class="card"><h3>Logo</h3><p>Uma identidade visual feita para representar sua marca.</p><div class="price-list"><div>Básico: <strong>R$ 80</strong></div><div>Elaborado: <strong>R$ 100</strong></div></div></article>
+        <article class="card"><h3>Post Feed</h3><p>Artes para comunicar e valorizar seu perfil.</p><div class="price-list"><div>Básico: <strong>R$ 40</strong></div><div>Elaborado: <strong>R$ 80</strong></div></div></article>
+        <article class="card"><h3>Stories</h3><p>Conteúdo visual para chamar atenção nos stories.</p><div class="price-list"><div>Básico: <strong>R$ 40</strong></div><div>Elaborado: <strong>R$ 70</strong></div></div></article>
+        <article class="card"><h3>Cardápio</h3><p>Organização visual clara para apresentar seus produtos.</p><div class="price-list"><div>Básico: <strong>R$ 100</strong></div><div>Elaborado: <strong>R$ 150</strong></div></div></article>
+        <article class="card"><h3>Anúncio</h3><p>Uma arte pensada para divulgar sua oferta ou novidade.</p><div class="price-list"><div>Básico: <strong>R$ 50</strong></div><div>Elaborado: <strong>R$ 100</strong></div></div></article>
+        <article class="card"><h3>Panfleto</h3><p>Material gráfico para divulgar sua marca e seus serviços.</p><div class="price-list"><div>Básico: <strong>R$ 50</strong></div><div>Elaborado: <strong>R$ 80</strong></div></div></article>
+        <article class="card"><h3>Banner</h3><p>Composição visual para divulgar sua marca em destaque.</p><div class="price-list"><div>Básico: <strong>R$ 70</strong></div><div>Elaborado: <strong>R$ 100</strong></div></div></article>
+        <article class="card"><h3>Capa para Redes</h3><p>Uma capa personalizada para completar seu perfil.</p><div class="price-list"><div>Básico: <strong>R$ 30</strong></div><div>Elaborado: <strong>R$ 70</strong></div></div></article>
+      </div>
+    </section>
+    <section id="pacotes">
+      <div class="section-heading">
+        <h2>Pacotes de artes</h2>
+        <p>Opções para criar conteúdo com unidade visual.</p>
+      </div>
+      <div class="packages">
+        <article class="package"><h3>3 ARTES</h3><div class="price">R$ 200</div><p>Pacote com 3 artes</p></article>
+        <article class="package"><h3>5 ARTES</h3><div class="price">R$ 300</div><p>Pacote com 5 artes</p></article>
+        <article class="package"><h3>10 ARTES</h3><div class="price">R$ 550</div><p>Pacote com 10 artes</p></article>
+        <article class="package"><h3>LOGO + 3 ARTES</h3><div class="price">R$ 350</div><p>Identidade visual e 3 artes</p></article>
+      </div>
+    </section>
+    <section id="contato">
+      <div class="contact">
+        <h2>Vamos criar seu próximo design?</h2>
+        <p>Escolha um serviço ou pacote e entre em contato para conversar sobre sua ideia.</p>
+      </div>
+    </section>
+  </main>
+  <footer>© KDesigns · Design gráfico</footer>
+</body>
+</html>
